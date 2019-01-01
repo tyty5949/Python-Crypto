@@ -9,7 +9,6 @@ Usage: python RepeatingXORFile.py <key> <input_file> <output_file>
 
 import sys
 
-mode = None
 key = None
 input_path = None
 output_path = None
@@ -29,16 +28,12 @@ def parse_arguments():
     global key
     global input_path
     global output_path
-    if len(sys.argv) < 5:
+    if len(sys.argv) < 4:
         print_usage()
         sys.exit(-1)
-    mode = sys.argv[1]
-    if mode != "encrypt" and mode != "decrypt":
-        print_usage()
-        sys.exit(-2)
-    key = sys.argv[2]
-    input_path = sys.argv[3]
-    output_path = sys.argv[4]
+    key = sys.argv[1]
+    input_path = sys.argv[2]
+    output_path = sys.argv[3]
 
 
 def main():
